@@ -5,7 +5,7 @@ const errorMiddleware = (err, req, res, next) => {
   err.message = err.message || "Internal Server Error";
 
   if (err.name === "CastError") {
-    const message = `Resource not Found ${err.path}`;
+    const message = `Resource not Found. Invalid: ${err.path}`;
     err = new ErrorHandler(message, 400);
   }
 
