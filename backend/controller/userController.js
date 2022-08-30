@@ -5,7 +5,6 @@ const sendJwtToken = require("../utils/jwtIoken");
 const sendEmail = require("../utils/sendEmail");
 const crypto = require("crypto");
 
-
 // Register a User
 exports.registerUser = catchAsyncError(async (req, res, next) => {
   const { name, email, password } = req.body;
@@ -100,7 +99,6 @@ exports.forgotPassword = catchAsyncError(async (req, res, next) => {
 
 // Reset Password
 exports.resetPassword = catchAsyncError(async (req, res, next) => {
-
   // creating token hash
   const resetPasswordToken = crypto
     .createHash("sha256")
@@ -131,4 +129,118 @@ exports.resetPassword = catchAsyncError(async (req, res, next) => {
   await user.save();
 
   sendJwtToken(user, 200, res);
+});
+
+// Get User Details
+exports.getUserDetails = catchAsyncError(async (req, res, next) => {
+  const user = await userModel.findById(req.user.id);
+  res.status(200).json({
+    success: true,
+    user,
+  });
+});
+
+// update user password
+exports.updatePassword = catchAsyncError(async (req, res, next) => {
+  const user = await userModel.findById(req.user.id).select("+password");
+
+  const isPasswordMatched = await user.comparePassword(req.body.oldPassword);
+
+  if (!isPasswordMatched) {
+    return next(new ErrorHandler("Old Password is incorrect", 400));
+  }
+  if (req.body.newPassword !== req.body.confirmPassword) {
+    return next(new ErrorHandler("Password does not match", 400));
+  }
+
+  user.password = req.body.confirmPassword;
+  await user.save();
+
+  sendJwtToken(user, 200, res);
+});
+
+// update user Profile
+exports.updateProfile = catchAsyncError(async (req, res, next) => {
+  const newUserData = {
+    name: req.body.name,
+    email: req.body.email,
+  };
+
+  // we will add cloudinary later
+
+  const user = await userModel.findByIdAndUpdate(req.user.id, newUserData, {
+    new: true,
+    runValidators: true,
+    useFindAndModify: false,
+  });
+
+  res.status(200).json({
+    success: true,
+  });
+});
+
+// get all users --- Admin
+exports.getAllUsers = catchAsyncError(async (req, res, next) => {
+  const users = await userModel.find();
+
+  res.status(200).json({
+    success: true,
+    users,
+  });
+});
+
+// get single user --- Admin
+exports.getSingleUser = catchAsyncError(async (req, res, next) => {
+  const user = await userModel.findById(req.params.id);
+
+  if (!user) {
+    return next(
+      new ErrorHandler(`User does not exist with Id: ${req.params.id}`, 400)
+    );
+  }
+
+  res.status(200).json({
+    success: true,
+    user,
+  });
+});
+
+// update user role --- Admin
+exports.updateUserRole = catchAsyncError(async (req, res, next) => {
+  const newUserData = {
+    name: req.body.name,
+    email: req.body.email,
+    role: req.body.role,
+  };
+
+  const user = await userModel.findByIdAndUpdate(req.params.id, newUserData, {
+    new: true,
+    runValidators: true,
+    useFindAndModify: false,
+  });
+
+  res.status(200).json({
+    success: true,
+    message: `Role change to ${req.body.role} Successfully`,
+  });
+});
+
+// Delete user --- Admin
+exports.deleteUser = catchAsyncError(async (req, res, next) => {
+
+  const user = await userModel.findById(req.params.id)
+  // we will remove cloudinary later
+
+  if (!user) {
+    return next(
+      new ErrorHandler(`User does not exist with Id: ${req.params.id}`, 400)
+    );
+  }
+
+  await user.remove();
+
+  res.status(200).json({
+    success: true,
+    message: "User Delete Successfully",
+  });
 });
