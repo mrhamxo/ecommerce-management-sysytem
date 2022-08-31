@@ -153,7 +153,7 @@ exports.updatePassword = catchAsyncError(async (req, res, next) => {
     return next(new ErrorHandler("Password does not match", 400));
   }
 
-  user.password = req.body.confirmPassword;
+  user.password = req.body.newPassword;
   await user.save();
 
   sendJwtToken(user, 200, res);
@@ -213,7 +213,7 @@ exports.updateUserRole = catchAsyncError(async (req, res, next) => {
     role: req.body.role,
   };
 
-  const user = await userModel.findByIdAndUpdate(req.params.id, newUserData, {
+  await userModel.findByIdAndUpdate(req.params.id, newUserData, {
     new: true,
     runValidators: true,
     useFindAndModify: false,

@@ -1,3 +1,3 @@
-module.exports = catchAsyncError => (req, res, next) => {
-  Promise.resolve(catchAsyncError(req, res, next)).catch(next);
+module.exports = (theFunc) => (req, res, next) => {
+  Promise.resolve(theFunc(req, res, next)).catch(next);
 };

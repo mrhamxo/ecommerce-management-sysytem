@@ -4,29 +4,31 @@ class ApiFeatures {
     this.queryStr = queryStr;
   }
 
-//   keyword Searching
+  //   keyword Searching
   search() {
-    const keyword = this.queryStr.keyword ? {
-        name: {
+    const keyword = this.queryStr.keyword
+      ? {
+          name: {
             $regex: this.queryStr.keyword,
-            $options: "i"
+            $options: "i",
+          },
         }
-    }: {};
+      : {};
 
     // console.log(keyword)
-    this.query = this.query.find({...keyword})
+    this.query = this.query.find({ ...keyword });
     return this;
   }
 
   // keyword Filtering
-  filter(){
-    const queryCopy = {...this.queryStr};
+  filter() {
+    const queryCopy = { ...this.queryStr };
     // console.log(queryCopy);
 
     // Removing some fields for category
     const removeFields = ["keyword", "page", "limit"];
     removeFields.forEach((key) => delete queryCopy[key]);
-    // console.log(queryCopy); 
+    // console.log(queryCopy);
 
     // Filter for price and rating
     // console.log(queryCopy);
@@ -39,14 +41,12 @@ class ApiFeatures {
     return this;
   }
 
-  pagination(resultPerPage){
+  pagination(resultPerPage) {
     const currentPage = Number(this.queryStr.page) || 1;
     const skip = resultPerPage * (currentPage - 1);
     this.query = this.query.limit(resultPerPage).skip(skip);
     return this;
-
   }
-
 }
 
 module.exports = ApiFeatures;
