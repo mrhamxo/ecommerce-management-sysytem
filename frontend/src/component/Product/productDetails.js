@@ -8,6 +8,7 @@ import { clearErrors, getProductDetails } from "../../actions/productAction";
 import ReviewCard from "./ReviewCard.js";
 import Loader from "../layout/Loader/Loader";
 import { useAlert } from "react-alert";
+import MetaData from "../layout/MetaData";
 
 const ProductDetails = () => {
   const dispatch = useDispatch();
@@ -19,9 +20,9 @@ const ProductDetails = () => {
   );
 
   useEffect(() => {
-    if(error){
+    if (error) {
       alert.error(error);
-      dispatch(clearErrors())
+      dispatch(clearErrors());
     }
     dispatch(getProductDetails(id));
   }, [dispatch, alert, error, id]);
@@ -41,6 +42,7 @@ const ProductDetails = () => {
         <Loader />
       ) : (
         <Fragment>
+          <MetaData title={`${product.name} -- ECOMMERCE`} />
           <div className="ProductDetails">
             <div>
               <Carousel>
@@ -91,7 +93,9 @@ const ProductDetails = () => {
           {product.reviews && product.reviews[0] ? (
             <div className="reviews">
               {product.reviews &&
-                product.reviews.map((review, index) => <ReviewCard key={index} review={review} />)}
+                product.reviews.map((review, index) => (
+                  <ReviewCard key={index} review={review} />
+                ))}
             </div>
           ) : (
             <p className="noReviews">No Review Yet</p>
