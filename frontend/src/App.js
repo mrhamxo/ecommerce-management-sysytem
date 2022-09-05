@@ -1,13 +1,13 @@
 import "./App.css";
-import Header from "./component/layout/Header/Header.js";
+import Header from "./component/layout/Header/Header";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import webfont from "webfontloader";
 import { useEffect } from "react";
 import Footer from "./component/layout/Footer/Footer";
 import Home from "./component/Home/Home";
 import ProductDetails from "./component/Product/productDetails";
-import Products from "./component/Product/Products.js";
-import Search from "./component/Product/Search.js";
+import Products from "./component/Product/Products";
+import Search from "./component/Product/Search";
 import LoginSignUp from "./component/User/LoginSignUp";
 import store from "./store";
 import { loadUser } from "./actions/userAction";
@@ -16,6 +16,9 @@ import { useSelector } from "react-redux";
 import Profile from "./component/User/Profile";
 import ProtectedRoute from "./component/Route/ProtectedRoute";
 import UpdateProfile from "./component/User/UpdateProfile";
+import UpdatePassword from "./component/User/UpdatePassword";
+import ForgotPassword from "./component/User/ForgotPassword";
+import ResetPassword from "./component/User/ResetPassword";
 
 function App() {
   const { isAuthenticated, user } = useSelector((state) => state.user);
@@ -39,10 +42,24 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/products/:keyword" element={<Products />} />
         <Route path="/search" element={<Search />} />
-        {/* <Route path="/account" element={<ProtectedRoute component={Profile} />} /> */}
-        <Route exact path='/account' element={<ProtectedRoute component={Profile} />} />
-        <Route exact path='/me/update' element={<ProtectedRoute component={UpdateProfile} />} />
-        <Route path="/login" element={<LoginSignUp />} />
+        <Route
+          exact
+          path="/account"
+          element={<ProtectedRoute component={Profile} />}
+        />
+        <Route
+          exact
+          path="/me/update"
+          element={<ProtectedRoute component={UpdateProfile} />}
+        />
+        <Route
+          exact
+          path="/password/update"
+          element={<ProtectedRoute component={UpdatePassword} />}
+        />
+        <Route exact path="/password/forgot" element={<ForgotPassword />} />
+        <Route exact path="/password/reset/:token" element={<ResetPassword />} />
+        <Route exact path="/login" element={<LoginSignUp />} />
       </Routes>
       <Footer />
     </Router>

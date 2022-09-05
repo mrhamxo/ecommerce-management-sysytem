@@ -41,7 +41,7 @@ const LoginSignUp = () => {
     dispatch(login(loginEmail, loginPassword));
   };
   const registerSubmit = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
 
     const myForm = new FormData();
 
@@ -49,7 +49,7 @@ const LoginSignUp = () => {
     myForm.set("email", email);
     myForm.set("password", password);
     myForm.set("avatar", avatar);
-    dispatch(register(myForm))
+    dispatch(register(myForm));
   };
 
   const registerDataChange = (e) => {
