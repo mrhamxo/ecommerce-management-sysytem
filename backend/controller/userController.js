@@ -252,13 +252,16 @@ exports.updateUserRole = catchAsyncError(async (req, res, next) => {
 // Delete user --- Admin
 exports.deleteUser = catchAsyncError(async (req, res, next) => {
   const user = await userModel.findById(req.params.id);
-  // we will remove cloudinary later
 
   if (!user) {
     return next(
       new ErrorHandler(`User does not exist with Id: ${req.params.id}`, 400)
     );
   }
+
+  // removing profile image from cloudinary
+  const imageId = user.avatar.public_id;
+  await cloudinary.v2.uploader.destroy(imageId);
 
   await user.remove();
 

@@ -42,7 +42,7 @@ const LoginSignUp = () => {
     dispatch(login(loginEmail, loginPassword));
   };
   const registerSubmit = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
 
     const myForm = new FormData();
 

@@ -2,11 +2,11 @@ import React, { Fragment, useEffect } from "react";
 import { CgMouse } from "react-icons/cg";
 import MetaData from "../layout/MetaData";
 import "./Home.css";
-import Product from "./ProductCard";
 import { clearErrors, getProduct } from "../../actions/productAction";
 import { useSelector, useDispatch } from "react-redux";
 import Loader from "../layout/Loader/Loader";
 import { useAlert } from "react-alert";
+import ProductCard from "./ProductCard";
 
 const Home = () => {
   const alert = useAlert();
@@ -42,8 +42,8 @@ const Home = () => {
           <h2 className="homeHeading">Featured Products</h2>
           <div className="container" id="container">
             {products &&
-              products.map((product, index) => (
-                <Product key={index} product={product} />
+              products.map((product) => (
+                <ProductCard key={product._id} product={product} />
               ))}
           </div>
         </Fragment>

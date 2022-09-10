@@ -11,9 +11,9 @@ const Profile = () => {
 
   useEffect(() => {
     if (isAuthenticated === false) {
-      navigate("/login", { replace: true });
+      navigate("/login");
     }
-  }, [isAuthenticated, navigate]);
+  }, [navigate, isAuthenticated]);
 
   return (
     <Fragment>
