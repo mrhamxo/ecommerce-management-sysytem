@@ -40,6 +40,7 @@ import UpdateUser from "./component/Admin/UpdateUser";
 import ProductReviews from "./component/Admin/ProductReviews";
 import About from "./component/layout/About/About";
 import Contact from "./component/layout/Contact/Contact";
+import NotFound from "./component/layout/NotFound/NotFound";
 
 function App() {
   const { isAuthenticated, user } = useSelector((state) => state.user);
@@ -62,11 +63,25 @@ function App() {
 
     getStripeApiKey();
   }, []);
+
+  // window.addEventListener("contextmenu", (e) => e.preventDefault());
+
   return (
     <Router>
-      <Header />
       {isAuthenticated && <UserOptions user={user} />}
+      <Header />
       <Routes>
+        {stripeApiKey && (
+          <Route
+            exact
+            path="/process/payment"
+            element={
+              <Elements stripe={loadStripe(stripeApiKey)}>
+                <ProtectedRoute component={Payment} />
+              </Elements>
+            }
+          />
+        )}
         <Route path="/" element={<Home />} />
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/products" element={<Products />} />
@@ -102,17 +117,6 @@ function App() {
           path="/login/shipping"
           element={<ProtectedRoute component={Shipping} />}
         />
-        {stripeApiKey && (
-          <Route
-            exact
-            path="/process/payment"
-            element={
-              <Elements stripe={loadStripe(stripeApiKey)}>
-                <ProtectedRoute component={Payment} />
-              </Elements>
-            }
-          />
-        )}
         <Route
           exact
           path="/success"
@@ -178,6 +182,7 @@ function App() {
           path="admin/reviews"
           element={<ProtectedRoute isAdmin={true} component={ProductReviews} />}
         />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
       <Footer />
     </Router>

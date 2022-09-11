@@ -14,28 +14,7 @@ const ProtectedRoute = ({ isAdmin, component: Component, ...rest }) => {
   }
 
   return (
-    <Fragment>
-      {loading === false ? (
-       <Component {...rest} />
-      ) : null}
-    </Fragment>
-    // <Fragment>
-    //   {loading === false && (
-    //     <Route
-    //       {...rest}
-    //       render={(props) => {
-    //         if (!isAuthenticated === false) {
-    //           return <Navigate to="/login" />;
-    //         }
-    //         if (isAdmin === true && user.role !== "admin") {
-    //           return <Navigate to="/login" />;
-    //         }
-
-    //         return <Component {...props} />;
-    //       }}
-    //     />
-    //   )}
-    // </Fragment>
+    <Fragment>{loading === false ? <Component {...rest} /> : null}</Fragment>
   );
 };
 

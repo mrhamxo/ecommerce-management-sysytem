@@ -14,11 +14,9 @@ const LoginSignUp = () => {
   const dispatch = useDispatch();
   const alert = useAlert();
   let navigate = useNavigate();
-  const location = useLocation()
+  const location = useLocation();
 
-  const { error, loading, isAuthenticated } = useSelector(
-    (state) => state.user
-  );
+  const { error, loading, isAuthenticated } = useSelector((state) => state.user);
 
   const loginTab = useRef(null);
   const registerTab = useRef(null);
@@ -37,8 +35,7 @@ const LoginSignUp = () => {
   const [avatar, setAvatar] = useState();
   const [avatarPreview, setAvatarPreview] = useState("/profile.png");
 
-  const loginSubmit = (e) => {
-    e.preventDefault();
+  const loginSubmit = () => {
     dispatch(login(loginEmail, loginPassword));
   };
   const registerSubmit = (e) => {

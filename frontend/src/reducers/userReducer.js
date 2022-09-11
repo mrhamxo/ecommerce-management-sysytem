@@ -69,14 +69,14 @@ export const userReducer = (state = { user: {} }, action) => {
     case REGISTER_USER_FAIL:
       return {
         ...state,
-        loading: true,
+        loading: false,
         isAuthenticated: false,
         user: null,
         error: action.payload,
       };
     case LOAD_USER_FAIL:
       return {
-        loading: true,
+        loading: false,
         isAuthenticated: false,
         user: null,
         error: action.payload,
