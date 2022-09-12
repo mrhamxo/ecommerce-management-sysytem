@@ -1,15 +1,18 @@
-#MERN E-COMMERCE WEBSITE
+MERN E-COMMERCE WEBSITE
+
 Assalam o alaikum! **My name is Muhammad Hamza Khattak**, I have created this ecommerce shopping website in **MERN Stack**.
 
-#Install Dependencies
+Install Dependencies
 **For Backend** - `npm i`
 
 **For Frontend** - `cd frontend` `npm i`
 
-##Env Variables
+Env Variables
+
 Make Sure to Create a config.env file in backend/config directory and add appropriate variables in order to use the app.
 
 **Essential Variables**
+
 PORT= 
 DB_URI = 
 STRIPE_API_KEY= 
