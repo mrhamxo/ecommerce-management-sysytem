@@ -2,6 +2,7 @@
   width: 100vw;
   max-width: 100%;
   display: flex;
+  margin-top: 2vmax;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -10,7 +11,7 @@
 .shippingBox {
   background-color: white;
   width: 25vw;
-  height: 90vh;
+  height: 80vh;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -19,7 +20,8 @@
   text-align: center;
   color: rgba(0, 0, 0, 0.664);
   font: 400 1.3vmax "Roboto";
-  padding: 1.3vmax;
+  padding-top: 2vmax;
+  padding-bottom: 2vmax;
   border-bottom: 1px solid rgba(0, 0, 0, 0.205);
   width: 50%;
   margin: auto;
@@ -29,7 +31,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: auto;
+  margin-top: 1vmax;
   padding: 2vmax;
   justify-content: space-evenly;
   height: 80%;
@@ -58,14 +60,14 @@
   position: absolute;
   transform: translateX(1vmax);
   font-size: 1.6vmax;
-  color: rgba(0, 0, 0, 0.623);
+  color: black;
 }
 
 .shippingBtn {
   border: none;
-  background-color: tomato;
+  background-color: #00bec9;
   color: white;
-  font: 300 1vmax "Roboto";
+  font: 300 1.2vmax "Roboto";
   width: 100%;
   padding: 1vmax;
   cursor: pointer;
@@ -75,7 +77,7 @@
 }
 
 .shippingBtn:hover {
-  background-color: rgb(179, 66, 46);
+  background-color: teal;
 }
 
 @media screen and (max-width: 600px) {

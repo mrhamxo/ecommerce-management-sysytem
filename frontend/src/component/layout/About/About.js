@@ -1,11 +1,11 @@
 import React from "react";
 import "./About.css";
 import { Button, Typography, Avatar } from "@material-ui/core";
-import YouTubeIcon from "@material-ui/icons/YouTube";
-import InstagramIcon from "@material-ui/icons/Instagram";
+import FacebookIcon from "@material-ui/icons/Facebook";
+import TwitterIcon from "@material-ui/icons/Twitter";
 const About = () => {
-  const visitInstagram = () => {
-    window.location = "";
+  const visitLinkedin = () => {
+    window.location = "https://www.linkedin.com/in/muhammad-hamza-khattak-8002b718b";
   };
   return (
     <div className="aboutSection">
@@ -22,8 +22,8 @@ const About = () => {
               alt="Founder"
             />
             <Typography>Muhammad Hamza Khattak</Typography>
-            <Button onClick={visitInstagram} color="primary">
-              Visit Instagram
+            <Button onClick={visitLinkedin} color="primary">
+              Visit linkedin
             </Button>
             <span>
               This is a sample wesbite made by @mr.hamxa942. Only with the
@@ -32,12 +32,12 @@ const About = () => {
           </div>
           <div className="aboutSectionContainer2">
             <Typography component="h2">Our Brands</Typography>
-            <a href="/" target="blank">
-              <YouTubeIcon className="youtubeSvgIcon" />
+            <a href="https://web.facebook.com/mr.hamxa942" target="blank">
+              <FacebookIcon className="youtubeSvgIcon" />
             </a>
 
-            <a href="/" target="blank">
-              <InstagramIcon className="instagramSvgIcon" />
+            <a href="https://twitter.com/hamzaktk485" target="blank">
+              <TwitterIcon className="instagramSvgIcon" />
             </a>
           </div>
         </div>

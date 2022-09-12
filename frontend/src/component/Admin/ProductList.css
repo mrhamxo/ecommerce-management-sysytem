@@ -24,23 +24,23 @@
 }
 
 .productListTable div {
-  font: 300 1vmax "Roboto";
-  color: rgba(0, 0, 0, 0.678);
+  font: 300 1.2vmax "Roboto";
+  color: black;
   border: none !important;
 }
 
 .productListTable a,
 .productListTable button {
-  color: rgba(0, 0, 0, 0.527);
+  color: black;
   transition: all 0.5s;
 }
 
 .productListTable a:hover {
-  color: tomato;
+  color: #00bec9;
 }
 
 .productListTable button:hover {
-  color: rgb(236, 30, 30);
+  color: teal;
 }
 
 .MuiDataGrid-columnHeader div {

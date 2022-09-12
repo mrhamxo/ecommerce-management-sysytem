@@ -14,17 +14,17 @@
 }
 
 .sidebar > a > img:hover {
-  filter: drop-shadow(0 0 10px tomato);
+  filter: drop-shadow(0 0 10px #00bec9);
 }
 .sidebar a {
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.493);
+  color: black;
   font: 200 1rem "Roboto";
   padding: 2rem;
   transition: all 0.5s;
 }
 .sidebar a:hover {
-  color: tomato;
+  color: #00bec9;
   transform: scale(1.1);
 }
 
@@ -34,6 +34,7 @@
 }
 .sidebar a > p > svg {
   margin-right: 0.5rem;
+  color: black;
 }
 
 .MuiTypography-root {

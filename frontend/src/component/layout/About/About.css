@@ -33,7 +33,7 @@
 
 .aboutSectionContainer > h1 {
   font: 400 3vmax "Roboto";
-  color: tomato;
+  color: #00bec9;
   margin: 2vmax;
 }
 
@@ -52,8 +52,8 @@
 }
 
 .aboutSectionContainer > div > div > p {
-  color: rgba(0, 0, 0, 0.623);
-  font: 100 1vmax "Roboto";
+  color: black;
+  font: 100 1.4vmax "Roboto";
 }
 
 .aboutSectionContainer > div > div > button {
@@ -62,7 +62,7 @@
 
 .aboutSectionContainer > div > div > span {
   font: 100 1vmax "Roboto";
-  color: rgba(0, 0, 0, 0.616);
+  color: black;
   text-align: center;
   width: 80%;
 }
@@ -72,7 +72,7 @@
 }
 
 .aboutSectionContainer2 > h2 {
-  color: rgba(0, 0, 0, 0.623);
+  color: black;
   font: 100 2vmax "Roboto";
   margin: 2vmax;
 }
@@ -82,11 +82,11 @@
 }
 
 .youtubeSvgIcon {
-  color: tomato;
+  color: #0165E1;
 }
 
 .instagramSvgIcon {
-  color: rgb(144, 81, 202);
+  color: #0A66C2;
 }
 
 @media screen and (max-width: 600px) {

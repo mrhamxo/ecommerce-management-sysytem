@@ -10,18 +10,22 @@
 }
 .emptyCart > svg {
   font-size: 5vmax;
-  color: tomato;
+  color: #00bec9;
 }
 .emptyCart > p {
-  font-size: 2vmax;
+  margin-top: 2vmax;
+  font-size: 1.5vmax;
+  padding: 10px;
+  
 }
 .emptyCart > a {
   background-color: rgb(51, 51, 51);
   color: white;
   border: none;
+  margin-top: 2vmax;
   padding: 1vmax 3vmax;
   cursor: pointer;
-  font: 400 1vmax "Roboto";
+  font: 400 1.2vmax "Roboto";
   text-decoration: none;
 }
 
@@ -30,14 +34,14 @@
 }
 
 .cartHeader {
-  background-color: tomato;
+  background-color: #00bec9;
   width: 90%;
   box-sizing: border-box;
   margin: auto;
   color: white;
   display: grid;
   grid-template-columns: 4fr 1fr 1fr;
-  font: 300 0.7vmax "Roboto";
+  font: 300 1vmax "Roboto";
 }
 .cartHeader > p {
   margin: 10px;
@@ -73,12 +77,12 @@
 
 .cartInput > input {
   border: none;
-  padding: 0.5vmax;
-  width: 1vmax;
+  padding: 0.7vmax;
+  width: 3vmax;
   text-align: center;
   outline: none;
   font: 400 0.8vmax "Roboto";
-  color: rgba(0, 0, 0, 0.74);
+  color: black;
 }
 
 .cartSubtotal {
@@ -89,7 +93,7 @@
   box-sizing: border-box;
   font: 300 1vmax cursive;
   justify-content: flex-end;
-  color: rgba(0, 0, 0, 0.753);
+  color: black;
 }
 
 .cartGrossProfit {
@@ -98,7 +102,7 @@
 }
 
 .cartGrossProfitBox {
-  border-top: 3px solid tomato;
+  border-top: 3px solid #00bec9;
   margin: 1vmax 4vmax;
   box-sizing: border-box;
   padding: 2vmax 0;
@@ -112,16 +116,21 @@
   justify-content: flex-end;
 }
 .checkOutBtn > button {
-  background-color: tomato;
+  background-color: #00bec9;
   color: white;
   border: none;
   padding: 0.8vmax 4vmax;
   width: 50%;
-  font: 300 0.8vmax "Roboto";
+  font: 300 1vmax "Roboto";
   margin: 1vmax 4vmax;
   cursor: pointer;
   border-radius: 30px;
 }
+.checkOutBtn > button:hover {
+  background-color: teal;
+
+}
+
 
 @media screen and (max-width: 600px) {
   .cartPage {
@@ -149,8 +158,8 @@
   }
 
   .cartInput > input {
-    width: 2vmax;
-    padding: 1.5vmax;
+    width: 4vmax;
+    padding: 1vmax;
     font: 400 1.8vmax "Roboto";
   }
 

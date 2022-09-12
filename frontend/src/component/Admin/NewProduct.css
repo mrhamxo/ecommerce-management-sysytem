@@ -1,5 +1,6 @@
 .newProductContainer {
-  width: 100%;
+  max-width: 100%;
+  width: 100vw;
   box-sizing: border-box;
   background-color: rgb(221, 221, 221);
   border-left: 1px solid rgba(0, 0, 0, 0.158);
@@ -8,7 +9,7 @@
   height: 100vh;
 }
 .newProductContainer h1 {
-  color: rgba(0, 0, 0, 0.733);
+  color: black;
   font: 300 2rem "Roboto";
   text-align: center;
 }
@@ -20,8 +21,8 @@
   margin: auto;
   padding: 3vmax;
   justify-content: space-evenly;
-  height: 70%;
-  width: 40vh;
+  height: 90%;
+  /* width: 60vh; */
   background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.267);
 }
@@ -40,7 +41,7 @@
   box-sizing: border-box;
   border: 1px solid rgba(0, 0, 0, 0.267);
   border-radius: 4px;
-  font: 300 0.9vmax cursive;
+  font: 300 0.8vmax;
   outline: none;
 }
 
@@ -48,7 +49,7 @@
   position: absolute;
   transform: translateX(1vmax);
   font-size: 1.6vmax;
-  color: rgba(0, 0, 0, 0.623);
+  color: black;
 }
 
 #createProductFormFile > input {
@@ -63,10 +64,10 @@
   height: 5vh;
   border: none;
   margin: 0%;
-  font: 400 0.8vmax cursive;
+  font: 400 1vmax cursive;
   transition: all 0.5s;
   padding: 0 1vmax;
-  color: rgba(0, 0, 0, 0.623);
+  color: black;
   background-color: rgb(255, 255, 255);
 }
 
@@ -85,9 +86,9 @@
 }
 #createProductBtn {
   border: none;
-  background-color: tomato;
+  background-color: #00bec9;
   color: white;
-  font: 300 0.9vmax "Roboto";
+  font: 300 1.2vmax "Roboto";
   width: 100%;
   padding: 0.8vmax;
   cursor: pointer;
@@ -98,7 +99,7 @@
 }
 
 #createProductBtn:hover {
-  background-color: rgb(179, 66, 46);
+  background-color: teal;
 }
 
 @media screen and (max-width: 600px) {

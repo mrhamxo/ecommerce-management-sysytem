@@ -17,7 +17,7 @@
 }
 
 .productReviewsFormHeading {
-  color: rgba(0, 0, 0, 0.733);
+  color: black;
   font: 300 2rem "Roboto";
   text-align: center;
 }
@@ -35,7 +35,7 @@
   box-sizing: border-box;
   border: 1px solid rgba(0, 0, 0, 0.267);
   border-radius: 4px;
-  font: 300 0.9vmax cursive;
+  font: 300 0.8vmax;
   outline: none;
 }
 
@@ -43,7 +43,7 @@
   position: absolute;
   transform: translateX(1vmax);
   font-size: 1.6vmax;
-  color: rgba(0, 0, 0, 0.623);
+  color: black;
 }
 
 @media screen and (max-width: 600px) {

@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(231, 231, 231);
+  background-color: #575757;
   position: fixed;
   top: 0%;
   left: 0;
@@ -21,10 +21,10 @@
 
 .updateProfileHeading {
   text-align: center;
-  color: rgba(0, 0, 0, 0.664);
+  color: black;
   font: 400 1.3vmax "Roboto";
   padding: 1.3vmax;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.205);
+  border-bottom: 1px solid black;
   width: 50%;
   margin: auto;
 }
@@ -53,7 +53,7 @@
   box-sizing: border-box;
   border: 1px solid rgba(0, 0, 0, 0.267);
   border-radius: 4px;
-  font: 300 0.9vmax cursive;
+  font: 300 0.8vmax;
   outline: none;
 }
 
@@ -61,7 +61,7 @@
   position: absolute;
   transform: translateX(1vmax);
   font-size: 1.6vmax;
-  color: rgba(0, 0, 0, 0.623);
+  color: black;
 }
 
 #updateProfileImage > img {
@@ -84,7 +84,7 @@
   font: 400 0.8vmax cursive;
   transition: all 0.5s;
   padding: 0 1vmax;
-  color: rgba(0, 0, 0, 0.623);
+  color: black;
   background-color: rgb(255, 255, 255);
 }
 
@@ -94,9 +94,9 @@
 
 .updateProfileBtn {
   border: none;
-  background-color: tomato;
+  background-color: #00bec9;
   color: white;
-  font: 300 0.9vmax "Roboto";
+  font: 300 1.2vmax "Roboto";
   width: 100%;
   padding: 0.8vmax;
   cursor: pointer;
@@ -107,7 +107,7 @@
 }
 
 .updateProfileBtn:hover {
-  background-color: rgb(179, 66, 46);
+  background-color: teal;
 }
 
 @media screen and (max-width: 600px) {

@@ -31,8 +31,8 @@ const Home = () => {
         <Fragment>
           <MetaData title="ECOMMERCE" />
           <div className="banner">
-            <p>Welcome to Ecommerce</p>
-            <h1>FIND AMAZING PRODUCTS BELOW</h1>
+            <p>Welcome to Online Shopping</p>
+            <h1>LETS START SHOPPING & FIND AMAZING PRODUCTS BELOW</h1>
             <a href="#container">
               <button>
                 Scroll <CgMouse />

@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(231, 231, 231);
+  background-color: #575757;
   position: fixed;
   top: 0%;
   left: 0;
@@ -15,7 +15,7 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.274);
   background-color: white;
   border: none;
-  color: rgba(0, 0, 0, 0.637);
+  color: black;
   padding: 1vmax 2vmax;
   width: 50%;
   outline: none;
@@ -28,7 +28,7 @@
 .searchBox > input[type="submit"] {
   height: 8%;
   border-radius: 0%;
-  background-color: tomato;
+  background-color: #00bec9;
   border: none;
   padding: 1vmax;
   width: 10%;
@@ -39,7 +39,7 @@
 }
 
 .searchBox > input[type="submit"]:hover {
-  background-color: rgb(55, 97, 214);
+  background-color: teal;
 }
 
 @media screen and (max-width: 600px) {

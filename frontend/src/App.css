@@ -1,9 +1,10 @@
 * {
   margin: 0;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; 
 }
 body{
   cursor: url("./images/cursor.png"), auto;
+  overflow-x: hidden;
 }
 
 /* chrome, safari, opera, edge */
@@ -24,3 +25,4 @@ input[type="number"] {
 .redColor {
   color: red !important;
 }
+
